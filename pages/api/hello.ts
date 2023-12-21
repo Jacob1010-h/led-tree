@@ -1,7 +1,5 @@
-'use client'
-
 import type { NextApiRequest, NextApiResponse } from "next";
-import { get, set, ref, query, onValue } from "firebase/database";
+import { set, ref, query, onValue } from "firebase/database";
 import { db } from "../../firebase/initFirebase";
 
 
@@ -26,6 +24,8 @@ export default function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
+    console.log(getData())
+    
     res.status(200).json(
         getData()
     );
