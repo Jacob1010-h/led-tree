@@ -1,14 +1,8 @@
 'use client';
-import Image from "next/image";``
-import {useState} from "react";
-
+import RangeSlider from "../components/RangeSlider";
+import OnOffButton from "@/components/OnOffButton";
 
 export default function Home() {
-    const [isOn, setIsOn] = useState(false);
-
-    const toggleLights = () => {
-        setIsOn(!isOn);
-    };
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-center">
@@ -21,18 +15,8 @@ export default function Home() {
                         Lights LED Test!
                     </a>
                 </h1>
-                <button
-                    className={`${
-                        isOn ? "bg-green-500" : "bg-red-500"
-                    } text-white font-bold mb-32 grid text-center py-2 px-4 rounded-full`}
-                    onClick={toggleLights}
-                >
-                    {isOn ? "ON" : "OFF"}
-                </button>
-                <input
-                    type="range"
-                    className="transparent h-[4px] w-full cursor-pointer appearance-none border-transparent bg-neutral-200 dark:bg-neutral-600"
-                />
+                <OnOffButton/>
+                <RangeSlider/>
             </div>
         </main>
     );
