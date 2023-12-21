@@ -2,6 +2,7 @@
 
 import RangeSlider from "../components/RangeSlider";
 import OnOffButton from "@/components/OnOffButton";
+import Dropdown from "@/components/Dropdown";
 
 export default function Home() {
 
@@ -18,6 +19,7 @@ export default function Home() {
                 </h1>
                 <OnOffButton/>
                 <RangeSlider/>
+                <Dropdown/>
             </div>
         </main>
     );
