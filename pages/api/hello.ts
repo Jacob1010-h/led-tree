@@ -2,8 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { set, ref, query, onValue } from "firebase/database";
 import { db } from "../../firebase/initFirebase";
 
-
-export function setData(path : string, value : any){
+export function setData(path: string, value: any) {
     set(ref(db, path), value);
 }
 
@@ -11,22 +10,21 @@ export function setData(path : string, value : any){
  * @param path Some valid params of this may be: "inputs"
  * @returns the JSON data of all of the data in the path
  */
-export function getData(path = "/"){
-    let data; // Declare the 'data' variable
-    const rawData = query(ref(db, path));
-    onValue(rawData, snapshot => {
-        data = snapshot.toJSON()
-    });
-    return data;
+export async function getData(path = "/") {
+    let data
+    await onValue(ref(db, path),
+        (snapshot) => {
+            data = snapshot.val()
+            console.log(snapshot.val());
+        },
+        (errorObject) => {
+            console.log("The read failed: " + errorObject.name);
+        }
+    );
+    return data
 }
 
-export default function handler(
-    req: NextApiRequest,
-    res: NextApiResponse
-) {
-    console.log(getData())
-    
-    res.status(200).json(
-        getData()
-    );
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    const data = await getData()
+    res.status(200).json(data);
 }
