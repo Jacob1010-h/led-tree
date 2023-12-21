@@ -1,11 +1,9 @@
+'use client'
+
 import type { NextApiRequest, NextApiResponse } from "next";
 import { get, set, ref, query, onValue } from "firebase/database";
 import { db } from "../../firebase/initFirebase";
 
-type ResponseData = {
-    toggle: boolean;
-    slider: number;
-};
 
 export function setData(path : string, value : any){
     set(ref(db, path), value);
@@ -29,6 +27,6 @@ export default function handler(
     res: NextApiResponse
 ) {
     res.status(200).json(
-        getData('inputs')
+        getData()
     );
 }
