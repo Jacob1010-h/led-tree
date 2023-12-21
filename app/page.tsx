@@ -1,4 +1,5 @@
 'use client';
+
 import RangeSlider from "../components/RangeSlider";
 import OnOffButton from "@/components/OnOffButton";
 

@@ -1,3 +1,5 @@
+'use client'
+
 import { setData } from "@/pages/api/hello";
 import { useState } from "react";
 
