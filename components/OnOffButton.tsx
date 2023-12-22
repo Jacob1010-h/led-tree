@@ -1,6 +1,6 @@
 'use client'
 
-import { setData } from "@/pages/api/hello";
+import { setData } from "@/pages/api/lights";
 import { useState } from "react";
 
 const OnOffButton = () => {
