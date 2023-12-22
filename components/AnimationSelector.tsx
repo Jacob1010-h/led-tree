@@ -29,14 +29,14 @@ function classNames(...classes: string[]) {
 const Dropdown = () => {
     const [selected, setSelected] = useState(people[3]);
 
-    setData("inputs/menu", selected.name);
+    setData("inputs/animation", selected.name);
 
     const menuChange = (event: any) => {
         setSelected({
             id: event.id,
             name: event.name,
         });
-        setData("inputs/menu", selected.name);
+        setData("inputs/animation", selected.name);
     };
 
     return (

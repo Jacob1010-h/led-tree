@@ -7,11 +7,11 @@ const RangeSlider = () => {
     const [rangeVal, setRangeval] = useState<number>(50)
 
     // update the values on component render
-    setData('inputs/slider', rangeVal)
+    setData('inputs/brightness', rangeVal)
 
     const sliderChange = (event: { target: { value: any; }; }) => {
         setRangeval(event.target.value)
-        setData('inputs/slider', rangeVal)
+        setData('inputs/brightness', rangeVal)
     }
 
     return(

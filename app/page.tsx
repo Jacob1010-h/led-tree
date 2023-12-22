@@ -3,6 +3,7 @@
 import RangeSlider from "../components/BrightnessSlider";
 import OnOffButton from "@/components/OnOffButton";
 import Dropdown from "@/components/AnimationSelector";
+import MyColorPicker from "@/components/ColorPicker";
 
 export default function Home() {
 
@@ -20,6 +21,7 @@ export default function Home() {
                 <OnOffButton/>
                 <RangeSlider/>
                 <Dropdown/>
+                <MyColorPicker/>
             </div>
         </main>
     );
