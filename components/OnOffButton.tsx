@@ -15,11 +15,11 @@ const OnOffButton = () => {
     };
 
     return(
-        <div className="flex justify-center">
+        <div className="flex justify-center content-center">
             <button
                 className={`${
                     isOn ? "bg-green-500" : "bg-red-500"
-                } text-white font-bold mb-32 grid text-center py-2 px-4 rounded-full w-5/6`}
+                } text-white font-bold m-10 text-center py-2 px-4 rounded-full w-5/6`}
                 onClick={toggleLights}
             >
                 {isOn ? "ON" : "OFF"}

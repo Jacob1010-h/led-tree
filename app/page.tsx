@@ -1,15 +1,15 @@
 'use client';
 
-import RangeSlider from "../components/RangeSlider";
+import RangeSlider from "../components/BrightnessSlider";
 import OnOffButton from "@/components/OnOffButton";
-import Dropdown from "@/components/Dropdown";
+import Dropdown from "@/components/AnimationSelector";
 
 export default function Home() {
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center">
-            <div className="grid gap-4 content-center">
-                <h1 className="text-4xl font-bold text-center">
+        <main className="flex min-h-screen flex-col items-center justify-center overflow-auto h-full">
+            <div className="grid grid-cols-1 gap-5">
+                <h1 className="text-4xl  font-bold text-center">
                     Welcome to{" "}
                     <a
                         className="text-blue-600 dark:text-blue-400"
